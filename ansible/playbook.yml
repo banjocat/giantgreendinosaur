@@ -1,0 +1,9 @@
+---
+
+- hosts: dino
+  gather_facts: no
+  roles:
+      - python
+      - docker
+      - dino
+
