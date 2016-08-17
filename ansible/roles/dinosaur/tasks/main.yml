@@ -1,1 +1,33 @@
 ---
+
+- name: Login into dockerhub
+  docker_login:
+      username: "{{docker_user}}"
+      password: "{{docker_password}}"
+      email: "{{docker_email}}"
+  tags:
+      - deploy
+
+
+- name: Add compose
+  template:
+      src: docker-compose.yml
+      dest: /tmp/docker-compose.yml
+  tags:
+      - deploy
+
+- name: Get latest image - {{image}}
+  docker_image:
+      name: "{{image}}"
+      force: yes
+  tags:
+      - deploy
+
+- name: Run staging compose
+  docker_service:
+      build: true
+      project_src: /tmp/.
+  tags:
+      - deploy
+
+
