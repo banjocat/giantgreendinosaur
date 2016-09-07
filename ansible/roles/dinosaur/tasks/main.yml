@@ -8,11 +8,15 @@
   tags:
       - deploy
 
+- name: Make dino direcotry
+  file:
+      path: /tmp/dinosaur
+      state: directory
 
 - name: Add compose
   template:
       src: docker-compose.yml
-      dest: /tmp/docker-compose.yml
+      dest: /tmp/dinosaur/docker-compose.yml
   tags:
       - deploy
 
@@ -26,7 +30,7 @@
 - name: Run staging compose
   docker_service:
       build: true
-      project_src: /tmp/.
+      project_src: /tmp/dinosaur/
   tags:
       - deploy
 

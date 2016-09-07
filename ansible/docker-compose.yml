@@ -2,6 +2,7 @@ version: '2'
 services:
     web:
         image: {{image}}
+        container_name: dinosaur_web
         ports: 
             - "80:80"
 
