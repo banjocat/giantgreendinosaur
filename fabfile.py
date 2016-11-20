@@ -3,7 +3,7 @@ from fabric.api import run, env, cd, put, hosts
 env['user'] = 'root'
 
 
-@hosts('giantgreendinosaur.com')
+@hosts('173.255.230.69')
 def deploy():
     '''
     Deploy the dinosaur
