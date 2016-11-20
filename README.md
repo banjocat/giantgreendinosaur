@@ -1,4 +1,4 @@
 # giantgreendinosaur
-http://www.giantgreendinosaur.com
+http://www.giantdino.com
 
 A giant green dino.
